@@ -1,0 +1,9 @@
+{
+    "blocks": {
+        "path": "assets/textures/blocks.png",
+        "item_size": {
+            "w": 16,
+            "h": 16
+        }
+    }
+}

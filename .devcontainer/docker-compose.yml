@@ -1,0 +1,11 @@
+name: rl-go
+version: '3.8'
+services:
+  devcontainer:
+    container_name: rl-go-devcontainer
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspaces:cached
+    command: sleep infinity

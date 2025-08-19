@@ -1,0 +1,68 @@
+{
+    "brick": {
+        "texture": {
+            "id": "blocks",
+            "index": 6
+        },
+        "default_size": {
+            "w": 16,
+            "h": 16
+        },
+        "collision": "solid"
+    },
+    "grass": {
+        "texture": {
+            "id": "blocks",
+            "index": 9
+        },
+        "default_size": {
+            "w": 16,
+            "h": 16
+        },
+        "collision": "solid"
+    },
+    "box": {
+        "texture": {
+            "id": "blocks",
+            "index": 24
+        },
+        "default_size": {
+            "w": 16,
+            "h": 16
+        },
+        "collision": "solid"
+    },
+    "boy": {
+        "texture": {
+            "id": "blocks",
+            "index": 0
+        },
+        "default_size": {
+            "w": 16,
+            "h": 16
+        },
+        "collision": "solid"
+    },
+    "blank": {
+        "texture": {
+            "id": "blocks",
+            "index": 35
+        },
+        "default_size": {
+            "w": 16,
+            "h": 16
+        },
+        "collision": "none"
+    },
+    "button": {
+        "texture": {
+            "id": "blocks",
+            "index": 25
+        },
+        "default_size": {
+            "w": 16,
+            "h": 16
+        },
+        "collision": "pressable"
+    }
+}

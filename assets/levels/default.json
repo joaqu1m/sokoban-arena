@@ -1,0 +1,17 @@
+{
+    "tutorial-1": {
+        "title": "A Simple Tutorial Level",
+        "author": "Borgar Þorsteinsson",
+        "group": "Tutorial",
+        "map": [
+            ["brick", "brick", "brick", "brick", "brick", "grass", "grass"],
+            ["brick", "boy", "blank", "blank", "brick", "grass", "grass"],
+            ["brick", "blank", "brick", "box", "brick", "brick", "brick"],
+            ["brick", "blank", "box", "blank", "button", "button", "brick"],
+            ["brick", "brick", "brick", "brick", "brick", "brick", "brick"]
+        ],
+        "textures": [
+            "blocks"
+        ]
+    }
+}
