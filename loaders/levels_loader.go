@@ -6,11 +6,11 @@ import (
 )
 
 type ParsedLevel struct {
-	Title    string     `json:"title"`
-	Author   string     `json:"author"`
-	Group    string     `json:"group"`
-	Map      [][]string `json:"map"`
-	Textures []string   `json:"textures"`
+	Title    string     `yaml:"title"`
+	Author   string     `yaml:"author"`
+	Group    string     `yaml:"group"`
+	Map      [][]string `yaml:"map"`
+	Textures []string   `yaml:"textures"`
 }
 
 var ParsedLevelMap = map[string]ParsedLevel{}
@@ -27,6 +27,6 @@ func GetParsedLevel(name string) ParsedLevel {
 }
 
 func init() {
-	loadFiles("assets/levels/*.json", &ParsedLevelMap)
+	loadFiles("assets/levels/*.yaml", &ParsedLevelMap)
 	log.Println("Levels loaded successfully")
 }

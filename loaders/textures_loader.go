@@ -7,8 +7,8 @@ import (
 )
 
 type ParsedTexture struct {
-	Path     string     `json:"path"`
-	ItemSize utils.Size `json:"item_size"`
+	Path     string     `yaml:"path"`
+	ItemSize utils.Size `yaml:"item_size"`
 }
 
 var ParsedTextureMap = map[string]ParsedTexture{}
@@ -25,6 +25,6 @@ func GetParsedTexture(name string) ParsedTexture {
 }
 
 func init() {
-	loadFiles("assets/textures/*.json", &ParsedTextureMap)
+	loadFiles("assets/textures/*.yaml", &ParsedTextureMap)
 	log.Println("Textures loaded successfully")
 }

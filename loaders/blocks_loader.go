@@ -7,9 +7,9 @@ import (
 )
 
 type ParsedBlock struct {
-	Texture     utils.TextureReference `json:"texture"`
-	DefaultSize utils.Size             `json:"default_size"`
-	Collision   utils.Collision        `json:"collision"`
+	Texture     utils.TextureReference `yaml:"texture"`
+	DefaultSize utils.Size             `yaml:"default_size"`
+	Collision   utils.Collision        `yaml:"collision"`
 }
 
 var ParsedBlockMap = map[string]ParsedBlock{}
@@ -26,6 +26,6 @@ func GetParsedBlock(name string) ParsedBlock {
 }
 
 func init() {
-	loadFiles("assets/blocks/*.json", &ParsedBlockMap)
+	loadFiles("assets/blocks/*.yaml", &ParsedBlockMap)
 	log.Println("Blocks loaded successfully")
 }

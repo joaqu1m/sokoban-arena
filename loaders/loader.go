@@ -1,23 +1,24 @@
 package loaders
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"gopkg.in/yaml.v3"
 )
 
 func loadFile[T any](filePath string, out *map[string]T) {
-	jsonData, err := os.ReadFile(filePath)
+	yamlData, err := os.ReadFile(filePath)
 	if err != nil {
-		panic(fmt.Sprintf("Error reading textures.json: %v\n", err))
+		panic(fmt.Sprintf("Error reading %s: %v\n", filePath, err))
 	}
 
 	var serialized map[string]T
-	err = json.Unmarshal(jsonData, &serialized)
+	err = yaml.Unmarshal(yamlData, &serialized)
 	if err != nil {
-		fmt.Printf("Error parsing textures.json: %v\n", err)
+		fmt.Printf("Error parsing %s: %v\n", filePath, err)
 		return
 	}
 
@@ -36,18 +37,18 @@ func loadFile[T any](filePath string, out *map[string]T) {
 func loadFiles[T any](filePath string, out *map[string]T) {
 	files, err := filepath.Glob(filePath)
 	if err != nil {
-		panic(fmt.Sprintf("Error reading level directory: %v\n", err))
+		panic(fmt.Sprintf("Error reading level directory %s: %v\n", filePath, err))
 	}
 
 	for _, file := range files {
-		jsonData, err := os.ReadFile(file)
+		yamlData, err := os.ReadFile(file)
 		if err != nil {
 			fmt.Printf("Error reading %s: %v\n", file, err)
 			continue
 		}
 
 		var serialized map[string]T
-		err = json.Unmarshal(jsonData, &serialized)
+		err = yaml.Unmarshal(yamlData, &serialized)
 		if err != nil {
 			fmt.Printf("Error parsing %s: %v\n", file, err)
 			continue
