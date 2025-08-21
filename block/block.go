@@ -2,6 +2,7 @@ package block
 
 import (
 	"log"
+	"rl-go/globals"
 	"rl-go/texture"
 	"rl-go/utils"
 
@@ -25,15 +26,15 @@ func NewBlock(x, y float32, w, h int32, textureReference utils.TextureReference)
 
 func (b *Block) Plot(textureManager texture.TextureManager) {
 
+	texture := textureManager.GetTexture(b.TextureReference.ID)
+	srcRect := texture.GetFromIndex(b.TextureReference.Index)
+
 	destRect := rl.Rectangle{
-		X:      b.Coords.X,
-		Y:      b.Coords.Y,
+		X:      float32(globals.ScreenMiddleX) + b.Coords.X,
+		Y:      float32(globals.ScreenMiddleY) + b.Coords.Y,
 		Width:  float32(b.Size.W),
 		Height: float32(b.Size.H),
 	}
-
-	texture := textureManager.GetTexture(b.TextureReference.ID)
-	srcRect := texture.GetFromIndex(b.TextureReference.Index)
 
 	rl.DrawTexturePro(
 		texture.LoadedTexture,

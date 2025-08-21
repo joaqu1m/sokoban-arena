@@ -28,8 +28,8 @@ func NewLevel(levelMap loaders.ParsedLevel) Level {
 			parsedBlock := loaders.GetParsedBlock(blockName)
 
 			blockRow = append(blockRow, block.NewBlock(
-				float32(colIndex-(colCount/2)),
-				float32(rowIndex-(rowCount/2)),
+				float32((colIndex-(colCount/2))*int(parsedBlock.DefaultSize.H)),
+				float32((rowIndex-(rowCount/2))*int(parsedBlock.DefaultSize.W)),
 				parsedBlock.DefaultSize.W,
 				parsedBlock.DefaultSize.H,
 				parsedBlock.Texture,
